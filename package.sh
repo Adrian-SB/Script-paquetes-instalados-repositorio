@@ -1,7 +1,7 @@
 #! \bin\sh
 
 echo
-echo "PAQUETES INSTALADOS A PARTIR DE UN REPOSITORIO EN CONCRETO"
+echo "PAQUETES INSTALADOS A PARTIR DE UN REPOSITORIO EN CONCRETO EN DEBIAN"
 echo
 echo "----------------------------------------------"
 echo "Repositorios instalados en el sistema"
@@ -54,11 +54,11 @@ if [[ $option == [1-$maxOption] ]]
 		echo "----------------------------------------------"
 		cat .result.txt
 		echo "----------------------------------------------"
-		echo "Total paquetes disponibles en el repositorio" $respositorio ":" ; wc -l .paquetes.txt | awk '{print $1}'
+		echo "Total paquetes instalados a partir del repositorio: " ; wc -l .result.txt | awk '{print $1}'
+		echo "----------------------------------------------"
+		echo "Total paquetes disponibles en el repositorio" $respositorio ":" ; wc -l .paquetes.txt | awk '{print $1}' 
 		echo "----------------------------------------------"
 		echo "Total paquetes instalados en el sistema: " ; wc -l .paqInst.txt | awk '{print $1}'
-		echo "----------------------------------------------"
-		echo "Total paquetes instalados a partir del repositorio: " ; wc -l .result.txt | awk '{print $1}'
 		echo "----------------------------------------------"
 		#Eliminamos los ficheros generados
 		rm .paquetes.txt
